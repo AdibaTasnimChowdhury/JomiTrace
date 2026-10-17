@@ -1,0 +1,48 @@
+{
+  "case_id": "case-s8",
+  "case_code": "JT-S8-CROSSWALK-NONE",
+  "title": "Cross-series RS khatian vs BS deed without crosswalk mapping",
+  "district": "Bogura",
+  "upazila": "Sadar",
+  "mouza": "Chelopara",
+  "config": {
+    "area_tolerance_pct": 1.0
+  },
+  "parties": [
+    {
+      "id": "p1",
+      "label": "Party P1"
+    },
+    {
+      "id": "p2",
+      "label": "Party P2"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-khatian-s8",
+      "record_type": "khatian",
+      "source_reference": "Khatian K-88 (RS)",
+      "survey_series": "RS",
+      "khatian_no": "88",
+      "dag_no": "140",
+      "area_value": 25.0,
+      "area_unit": "decimal",
+      "owner_party_id": "p1"
+    },
+    {
+      "id": "rec-deed-s8",
+      "record_type": "deed",
+      "source_reference": "Deed D-102 (BS)",
+      "survey_series": "BS",
+      "dag_no": "285",
+      "record_date": "2021-05-10",
+      "registration_date": "2021-05-12",
+      "area_value": 25.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p2"
+    }
+  ],
+  "crosswalks": []
+}
