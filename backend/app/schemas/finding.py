@@ -27,7 +27,8 @@ class FindingBase(BaseModel):
     compared_fields: List[str] = Field(default_factory=list)
     observed_values: Dict[str, Any] = Field(default_factory=dict)
     limitations: str = Field(..., min_length=1)
-    recommended_next_step: str = Field(..., min_length=1)
+    # Passing and not-assessed outcomes intentionally have no follow-up action.
+    recommended_next_step: str = Field(default="")
 
 class FindingCreate(FindingBase):
     evidence: Optional[List[FindingEvidenceCreate]] = Field(default_factory=list)

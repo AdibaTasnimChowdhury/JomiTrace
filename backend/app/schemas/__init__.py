@@ -43,6 +43,39 @@ from app.schemas.analysis_run import (
     AnalysisRunCreate,
     AnalysisRunResponse,
 )
+from app.schemas.analysis import (
+    AnalysisRequest,
+    AnalysisResponse,
+    CaseSummaryResponse,
+)
+from app.schemas.timeline import (
+    TimelineNode,
+    TimelineResponse,
+)
+from app.schemas.comparison import (
+    ComparisonCell,
+    ComparisonRow,
+    ComparisonResponse,
+)
+from app.schemas.report import (
+    ReportMetadata,
+    ReportResponse,
+)
+from app.schemas.rule_catalog import (
+    RuleCatalogItem,
+    RuleCatalogResponse,
+)
+from app.schemas.scenario import (
+    ScenarioInfo,
+    ScenarioListResponse,
+)
+from app.schemas.audit import (
+    CaseAuditEventResponse,
+    AuditTrailResponse,
+)
+from app.schemas.integrity import (
+    IntegrityCheckResponse,
+)
 
 __all__ = [
     "CaseBase",
@@ -78,4 +111,21 @@ __all__ = [
     "AnalysisRunBase",
     "AnalysisRunCreate",
     "AnalysisRunResponse",
+    "AnalysisRequest",
+    "AnalysisResponse",
+    "CaseSummaryResponse",
+    "TimelineNode",
+    "TimelineResponse",
+    "ComparisonCell",
+    "ComparisonRow",
+    "ComparisonResponse",
+    "ReportMetadata",
+    "ReportResponse",
+    "RuleCatalogItem",
+    "RuleCatalogResponse",
+    "ScenarioInfo",
+    "ScenarioListResponse",
+    "CaseAuditEventResponse",
+    "AuditTrailResponse",
+    "IntegrityCheckResponse",
 ]
