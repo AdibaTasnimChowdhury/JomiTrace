@@ -1,0 +1,38 @@
+{
+  "case_id": "case-s7",
+  "case_code": "JT-S7-BLANK",
+  "title": "Records with blank and incomplete required fields",
+  "district": "Sylhet",
+  "upazila": "Beanibazar",
+  "mouza": "Kurarbazar",
+  "config": {
+    "area_tolerance_pct": 1.0
+  },
+  "parties": [],
+  "records": [
+    {
+      "id": "rec-khatian-s7",
+      "record_type": "khatian",
+      "source_reference": "Incomplete Khatian",
+      "survey_series": null,
+      "khatian_no": null,
+      "dag_no": null,
+      "area_value": null,
+      "area_unit": null
+    },
+    {
+      "id": "rec-deed-s7",
+      "record_type": "deed",
+      "source_reference": "Blank Deed",
+      "survey_series": null,
+      "dag_no": null,
+      "record_date": null,
+      "registration_date": null,
+      "area_value": null,
+      "area_unit": null,
+      "seller_party_id": null,
+      "buyer_party_id": null
+    }
+  ],
+  "events": []
+}
