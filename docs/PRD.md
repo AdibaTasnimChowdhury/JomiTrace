@@ -20,7 +20,7 @@ Land disputes are among the most common civil cases. They often trace to forged 
 **Tier A (Round 1, due 18 Oct 2026)**
 1. **Case creation:** case code, location references, notes, status, synthetic label.
 2. **Structured record entry:** deed, khatian/porcha (with survey series CS/SA/RS/BS), mutation, DCR/tax receipt, other. Unknown stays unknown. Original area + unit preserved.
-3. **Rule engine R01-R09** (see `RULES.md`), each with rule code, compared fields, observed values, source links, limitations, next step.
+3. **Rule engine R01-R10** (see `RULES.md`), each with rule code, compared fields, observed values, source links, limitations, next step.
 4. **Timeline:** chronological nodes; undated events stay "Date not supplied"; gap and overlap markers.
 5. **Comparison grid** with conflicting values highlighted and flat "Inspect evidence" actions.
 6. **Printable report** with limitations statement and the analysis run it came from.
@@ -36,8 +36,8 @@ Land disputes are among the most common civil cases. They often trace to forged 
 13. Live deployment link.
 
 **Tier C (stretch)**
-14. R10 document-reuse check (SHA-256 of a synthetic file; same deed number across cases).
-15. Cross-case plot index over the synthetic registry (shows system-level double-sale detection).
+14. R10 document-reuse screening (entered SHA-256 values and repeated deed numbers with differing plot details are compared within one case).
+15. Cross-case plot index over a shared synthetic registry (future work; not implemented).
 
 ## P3 coverage map
 | P3 text | Covered by |
