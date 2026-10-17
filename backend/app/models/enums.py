@@ -4,12 +4,15 @@ from enum import Enum
 class CaseStatus(str, Enum):
     DRAFT = "draft"
     IN_REVIEW = "in_review"
+    CONFLICT_DETECTED = "conflict_detected"
     REVIEW_REQUIRED = "review_required"
+    INSUFFICIENT_INFORMATION = "insufficient_information"
     REPORT_READY = "report_ready"
     ARCHIVED = "archived"
 
 class Provenance(str, Enum):
     SYNTHETIC = "synthetic"
+    USER_ENTERED = "user_entered"
     ORGANIZER = "organizer"
     PUBLIC = "public"
 
@@ -44,6 +47,7 @@ class FindingStatus(str, Enum):
     REVIEW_REQUIRED = "review_required"
     INSUFFICIENT_INFORMATION = "insufficient_information"
     NO_INCONSISTENCY_FOUND = "no_inconsistency_found"
+    NOT_APPLICABLE = "not_applicable"
 
 class FindingCategory(str, Enum):
     PLOT_MISMATCH = "plot_mismatch"
