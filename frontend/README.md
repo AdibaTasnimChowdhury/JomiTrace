@@ -1,32 +1,14 @@
-# React + TypeScript + Vite
+# Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+JomiTrace's browser client is a React, TypeScript, and Vite application. It provides the Investigation Ledger, case workspace, Rules & Limitations page, English/Bangla UI, and printable screening report.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+From this directory, run `npm install` once, then `npm run dev`. The client expects the local FastAPI backend at `http://localhost:8000`; see the root [README](../README.md) for backend setup and configuration.
 
-## React Compiler
+## Release checks
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `npm run lint` runs Oxlint. Existing lint warnings are listed in `docs/RELEASE_NOTES.md`.
+- `npm run build` runs TypeScript project checks and creates the Vite production build.
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Do not treat a successful build as a substitute for the browser workflow, mobile accessibility review, or Bangla language review listed in `docs/RELEASE_CHECKLIST.md`.
