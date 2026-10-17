@@ -1,0 +1,89 @@
+{
+  "case_id": "case-s3",
+  "case_code": "JT-S3-OVERCONVEY",
+  "title": "Seller owns 50 decimal and deeds convey 30 and 32 decimal (over-conveyance)",
+  "district": "Narayanganj",
+  "upazila": "Rupganj",
+  "mouza": "Murapara",
+  "config": {
+    "area_tolerance_pct": 1.0,
+    "rapid_transfer_days": 30
+  },
+  "parties": [
+    {
+      "id": "p1",
+      "label": "Party P1 (Seller)"
+    },
+    {
+      "id": "p2",
+      "label": "Party P2 (Buyer 1)"
+    },
+    {
+      "id": "p3",
+      "label": "Party P3 (Buyer 2)"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-khatian-s3",
+      "record_type": "khatian",
+      "source_reference": "RS Khatian 88",
+      "survey_series": "RS",
+      "khatian_no": "88",
+      "dag_no": "450",
+      "area_value": 50.0,
+      "area_unit": "decimal",
+      "owner_party_id": "p1"
+    },
+    {
+      "id": "rec-deed-s3-1",
+      "record_type": "deed",
+      "source_reference": "Deed D-102",
+      "survey_series": "RS",
+      "dag_no": "450",
+      "record_date": "2021-02-01",
+      "registration_date": "2021-02-05",
+      "area_value": 30.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p2"
+    },
+    {
+      "id": "rec-deed-s3-2",
+      "record_type": "deed",
+      "source_reference": "Deed D-117",
+      "survey_series": "RS",
+      "dag_no": "450",
+      "record_date": "2021-04-10",
+      "registration_date": "2021-04-15",
+      "area_value": 32.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p3"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-s3-1",
+      "source_record_id": "rec-deed-s3-1",
+      "event_date": "2021-02-05",
+      "transfer_type": "sale",
+      "from_party_id": "p1",
+      "to_party_id": "p2",
+      "area_conveyed_value": 30.0,
+      "area_unit": "decimal",
+      "sequence_index": 0
+    },
+    {
+      "id": "ev-s3-2",
+      "source_record_id": "rec-deed-s3-2",
+      "event_date": "2021-04-15",
+      "transfer_type": "sale",
+      "from_party_id": "p1",
+      "to_party_id": "p3",
+      "area_conveyed_value": 32.0,
+      "area_unit": "decimal",
+      "sequence_index": 1
+    }
+  ]
+}
