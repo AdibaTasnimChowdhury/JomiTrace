@@ -46,7 +46,7 @@ class VerificationCase(Base):
     provenance: Mapped[Provenance] = mapped_column(
         Enum(Provenance),
         nullable=False,
-        default=Provenance.SYNTHETIC,
+        default=Provenance.USER_ENTERED,
     )
     config_json: Mapped[Dict[str, Any]] = mapped_column(
         JSON,
@@ -95,4 +95,10 @@ class VerificationCase(Base):
         "ChecklistItem",
         back_populates="case",
         cascade="all, delete-orphan",
+    )
+    audit_events: Mapped[List["CaseAuditEvent"]] = relationship(
+        "CaseAuditEvent",
+        back_populates="case",
+        cascade="all, delete-orphan",
+        order_by="desc(CaseAuditEvent.created_at)",
     )
