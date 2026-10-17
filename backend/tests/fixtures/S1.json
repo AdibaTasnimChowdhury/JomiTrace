@@ -1,0 +1,104 @@
+{
+  "case_id": "case-s1",
+  "case_code": "JT-S1-CLEAN",
+  "title": "Clean 3-link continuous chain with consistent deed, mutation, and DCR",
+  "district": "Gazipur",
+  "upazila": "Sreepur",
+  "mouza": "Telihati",
+  "config": {
+    "area_tolerance_pct": 1.0,
+    "rapid_transfer_days": 30,
+    "mutation_reference_days": 45
+  },
+  "parties": [
+    {
+      "id": "p1",
+      "label": "Party P1 (Original Owner)"
+    },
+    {
+      "id": "p2",
+      "label": "Party P2 (First Purchaser)"
+    },
+    {
+      "id": "p3",
+      "label": "Party P3 (Second Purchaser)"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-khatian-1",
+      "record_type": "khatian",
+      "source_reference": "RS Khatian 101",
+      "survey_series": "RS",
+      "khatian_no": "101",
+      "dag_no": "500",
+      "area_value": 30.0,
+      "area_unit": "decimal",
+      "owner_party_id": "p1"
+    },
+    {
+      "id": "rec-deed-1",
+      "record_type": "deed",
+      "source_reference": "Deed 2020/01",
+      "survey_series": "RS",
+      "dag_no": "500",
+      "deed_no": "2020-01",
+      "record_date": "2020-03-10",
+      "registration_date": "2020-03-15",
+      "area_value": 30.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p2"
+    },
+    {
+      "id": "rec-mut-1",
+      "record_type": "mutation",
+      "source_reference": "Mutation Case 2020/45",
+      "survey_series": "RS",
+      "dag_no": "500",
+      "deed_no": "2020-01",
+      "record_date": "2020-04-10",
+      "area_value": 30.0,
+      "area_unit": "decimal",
+      "owner_party_id": "p2"
+    },
+    {
+      "id": "rec-deed-2",
+      "record_type": "deed",
+      "source_reference": "Deed 2022/88",
+      "survey_series": "RS",
+      "dag_no": "500",
+      "deed_no": "2022-88",
+      "record_date": "2022-06-01",
+      "registration_date": "2022-06-05",
+      "area_value": 30.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p2",
+      "buyer_party_id": "p3"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-1",
+      "source_record_id": "rec-deed-1",
+      "event_date": "2020-03-15",
+      "transfer_type": "sale",
+      "from_party_id": "p1",
+      "to_party_id": "p2",
+      "area_conveyed_value": 30.0,
+      "area_unit": "decimal",
+      "sequence_index": 0
+    },
+    {
+      "id": "ev-2",
+      "source_record_id": "rec-deed-2",
+      "event_date": "2022-06-05",
+      "transfer_type": "sale",
+      "from_party_id": "p2",
+      "to_party_id": "p3",
+      "area_conveyed_value": 30.0,
+      "area_unit": "decimal",
+      "sequence_index": 1
+    }
+  ]
+}
