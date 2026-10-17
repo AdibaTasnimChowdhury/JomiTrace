@@ -1,6 +1,6 @@
 # Backend schema (v3)
 
-SQLAlchemy models; SQLite default, PostgreSQL supported. Use JSON columns (JSONB on Postgres). Names may be adapted if evidence traceability is preserved.
+This document describes the current SQLAlchemy models. SQLite is the configured default; another SQLAlchemy dialect may require an installed driver and deployment validation. This project does not include a PostgreSQL or Docker Compose deployment configuration.
 
 ## Relationships
 `Case 1-N SourceRecord`, `Case 1-N Party 1-N PartyAlias`, `Case 1-N PlotCrosswalk`, `Case 1-N TransferEvent`, `Case 1-N AnalysisRun 1-N Finding N-N SourceRecord` (via `finding_evidence`), `Case 1-N ChecklistItem`.
