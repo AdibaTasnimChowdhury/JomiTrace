@@ -1,18 +1,28 @@
 # JomiTrace
 
-JomiTrace is an explainable land-record verification and risk screening workspace built for LandTech 2026. It directly addresses **P3 Fraud & Double-Selling Detection** with an entry workflow supporting **P5 Citizen Pre-Purchase Verification**. Rather than generating black-box scores or claiming automated legal verdicts, JomiTrace reconstructs the documented chain of custody from user-entered metadata, tests deterministic rules (JT-R01 to JT-R09), surfaces discrepancies with exact field-level evidence links, and highlights avoided false alarms.
+> **Explainable land-record discrepancy screening for Bangladesh**
+>
+> Built for the [LandTech 2026 Hackathon](https://landtech.daffodilvarsity.edu.bd/) at Daffodil International University.
+> Directly addresses **P3 – Fraud & Double-Selling Detection** and **P5 – Citizen Pre-Purchase Verification**.
 
-## What it does / what it does not do
+---
 
-### What it does:
-- Reconstructs chronological chain-of-custody transfer sequences from entered record metadata.
-- Executes pure, deterministic rules comparing plots, areas, dates, parties, and registration-mutation links.
-- Accounts for survey generations (CS, SA, RS, BS) and unit conversions without raising false alarms.
-- Provides an investigation ledger, node-based chronological timeline, and record-comparison grid.
-- Exports printable verification reports documenting compared fields, limitations, and pending manual checks.
+## What it does / what it does NOT do
 
-### What it does NOT do:
-- Does NOT access or scrape live government portals or confidential databases.
+### ✅ What it does
+
+- Reconstructs the chronological chain-of-custody transfer sequence from user-entered record metadata.
+- Executes **10 pure, deterministic rules** (JT-R01 to JT-R10) comparing plots, areas, dates, parties, and registration-mutation links.
+- Accounts for Bangladesh survey generations (CS, SA, RS, BS) and supported area-unit conversions (decimal/acre/sq ft), with explicit limitations.
+- Provides an **Investigation Ledger**, node-based **Ownership Timeline**, horizontal **Record Comparison Grid**, and **External Review Checklist**.
+- Generates **printable screening reports** with cited evidence, limitations, and mandatory non-judicial disclaimers.
+- Records a SHA-256 input fingerprint per analysis run and a local audit history; neither proves source authenticity nor provides tamper-proof audit storage.
+- Supports full **English and Bangla (বাংলা)** interface switching.
+- Ships 8 canonical **demonstration scenarios** (S1–S8) covering duplicate transfers, chain gaps, over-conveyance, date anomalies, and more.
+
+### ❌ What it does NOT do
+
+- Does NOT access or scrape live government portals (BRS, DLRS, e-Porcha, e-Namjari, DLR).
 - Does NOT claim to prove legal title, authentic ownership, or verify document authenticity.
 - Does NOT produce probabilistic fraud risk scores or ungrounded generative summaries.
 - Does NOT replace physical on-site verification, certified record copies, or legal counsel.
@@ -21,114 +31,212 @@ JomiTrace is an explainable land-record verification and risk screening workspac
 
 ## Prerequisites
 
-- **Python:** 3.12 or newer
-- **Node.js:** 20.x or 24.x LTS (with npm)
-- **Git:** 2.x
+| Requirement | Version |
+|---|---|
+| Python | 3.12 or newer |
+| Node.js | 20.x or 24.x LTS |
+| npm | 10.x+ (bundled with Node) |
+| Git | 2.x |
 
 ---
 
 ## Quick start (running locally)
 
-### 1. Backend setup & startup (FastAPI)
-
-From the project root:
+### 1. Backend setup (FastAPI + SQLite)
 
 ```bash
-# Navigate to backend
+# From the project root:
 cd backend
 
-# Create Python virtual environment (if not already created)
+# Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# Windows PowerShell:
+# Activate (Windows PowerShell)
 .\venv\Scripts\Activate.ps1
-# Windows Command Prompt:
-.\venv\Scripts\activate.bat
-# Linux/macOS:
-source venv/bin/activate
+# Or on macOS/Linux:
+# source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Start FastAPI development server (runs on http://127.0.0.1:8000)
+# Start the API server
 uvicorn app.main:app --reload --port 8000
 ```
 
-Verify backend health:
-- Health endpoint: `http://127.0.0.1:8000/api/health`
-- Interactive OpenAPI docs: `http://127.0.0.1:8000/docs`
+The backend will be available at `http://localhost:8000`.
+API docs (Swagger UI): `http://localhost:8000/docs`.
 
-### 2. Frontend setup & startup (React + Vite + Tailwind CSS)
+The backend reads configuration from process environment variables such as `DATABASE_URL` and `CORS_ORIGINS`; defaults are set in `backend/app/core/config.py`. When started from the `backend` directory, the default SQLite URL creates or opens `backend/jomitrace.db`. Back up any database you need to keep before changing its path or running an alternate copy of the app. The application initializes missing tables on startup; it does not seed demo cases until a scenario is explicitly loaded.
 
-Open a second terminal window from the project root:
+### 2. Frontend setup (React + Vite)
 
 ```bash
-# Navigate to frontend
+# From the project root:
 cd frontend
 
-# Install dependencies (if not already installed)
+# Install Node.js dependencies
 npm install
 
-# Start Vite development server
+# Start the development server
 npm run dev
 ```
 
-The frontend web interface will run at `http://localhost:5173`.
-The Vite dev server proxies `/api` requests directly to `http://127.0.0.1:8000`.
+Open `http://localhost:5173` in your browser.
+
+### 3. Load demo scenarios
+
+Once both servers are running, click **"Load Demo Scenario"** in the Investigation Ledger to load any of S1–S8, then click a case to open it and press **▶ Run screening checks**.
+
+---
+
+## Demo Scenarios (S1–S8)
+
+| ID | Case Code | Primary Discrepancy |
+|---|---|---|
+| **S1** | JT-S1 | Clean 3-link continuous chain (no flags) |
+| **S2** | JT-S2 | Competing duplicate transfer of same holding |
+| **S3** | JT-S3 | Over-conveyance — sold area exceeds khatian area |
+| **S4** | JT-S4 | Unit conversion: one valid, one 12% mismatch |
+| **S5** | JT-S5 | Chain gap — 3rd seller never appeared as buyer |
+| **S6** | JT-S6 | Mutation mismatch + rapid resale within 14 days |
+| **S7** | JT-S7 | Records with blank / incomplete mandatory fields |
+| **S8** | JT-S8 | Cross-series RS khatian vs BS deed without crosswalk |
+
+All scenarios use **entirely synthetic (fictional) data** with no real parties, deeds, or land records.
+
+---
+
+## Deterministic Rules (JT-R01 to JT-R10)
+
+| Rule | Category | What it checks |
+|---|---|---|
+| **JT-R01** | Plot mismatch | Dag number inconsistency across documents |
+| **JT-R02** | Area discrepancy | Area mismatch with unit-conversion tolerance |
+| **JT-R03** | Chain gap | Seller in transfer N was never confirmed buyer in N-1 |
+| **JT-R04** | Duplicate sale | Competing conveyances on the same holding |
+| **JT-R05** | Over-conveyance | Total conveyed area exceeds recorded khatian area |
+| **JT-R06** | Registration date sequence | Checks future registration dates and linked mutation registrations before cited deed registration |
+| **JT-R07** | Registration–mutation link | Compares linked parties and areas; missing mutation data is insufficient information unless other deed links are available for comparison |
+| **JT-R08** | Rapid transfer | Re-sale within configurable threshold (default 30 days) |
+| **JT-R09** | Missing mandatory field | Reports required metadata missing for each record type |
+| **JT-R10** | Document hash reuse | Identical SHA-256 hash registered to different parties |
+
+Each rule produces one of four outcomes: **Conflict detected**, **Review required**, **Insufficient information**, or **No inconsistency found**.
+
+---
+
+## Architecture
+
+```
+jomitrace/
+├── backend/                  # FastAPI application
+│   ├── app/
+│   │   ├── main.py           # ASGI entry-point, CORS, router registration
+│   │   ├── models/           # SQLAlchemy ORM models
+│   │   ├── schemas/          # Pydantic request/response schemas
+│   │   ├── api/              # Route handlers (cases, records, analysis, audit…)
+│   │   ├── rules/            # Deterministic rule implementations (r01–r10)
+│   │   ├── services/         # Analysis orchestration, scenario loader, reports
+│   │   └── db/session.py     # SQLite engine + session factory
+│   └── tests/                # pytest test suite
+│
+├── frontend/                 # React + TypeScript + Vite application
+│   ├── src/
+│   │   ├── App.tsx           # Root component: nav, health check, guided tour
+│   │   ├── api/client.ts     # Typed API client (fetch wrapper)
+│   │   ├── locales/index.ts  # EN/BN translation dictionary + helper functions
+│   │   ├── types/            # Shared TypeScript interfaces
+│   │   └── components/
+│   │       ├── common/       # StatusBadge, Modal, GuidedTour
+│   │       ├── ledger/       # CaseLedger, CreateCaseModal, LoadScenarioModal
+│   │       ├── rules/        # RulesCatalogView
+│   │       └── workspace/    # CaseWorkspace, FindingsView, TimelineView,
+│   │                         # ComparisonView, ChecklistView, AuditView,
+│   │                         # ReportView, RecordsView, PartiesView
+│   └── vite.config.ts
+│
+├── docs/                     # Project documentation
+│   ├── PRD.md                # Product Requirements Document
+│   ├── TRD.md                # Technical Requirements Document
+│   ├── RULES.md              # Rule definitions and test vectors
+│   ├── APP_FLOW.md           # Navigation and workflow diagrams
+│   ├── CONCEPT_NOTE.md       # Hackathon submission concept note
+│   └── DEMO_SCRIPT.md        # 3-minute demo shot list
+│
+└── backend/jomitrace.db     # SQLite database, relative to backend working directory
+```
+
+**Storage:** SQLite (single file, no external database needed); default path is relative to the backend working directory.
+**Auth:** None — prototype scope.
+**Deployment:** Local development only (no live deployment URL).
 
 ---
 
 ## Running tests
 
-Run the backend test suite:
+### Backend (pytest)
 
 ```bash
-# From project root with venv activated or directly via venv python:
-backend\venv\Scripts\pytest backend\tests -v
+cd backend
+.\venv\Scripts\Activate.ps1  # Windows
+pip install -r requirements.txt
+python -m pytest tests/ -v
 ```
 
-Run frontend production build verification:
+Run the commands above for current results. The dated result and any skipped release checks are recorded in [docs/RELEASE_NOTES.md](docs/RELEASE_NOTES.md).
+
+### Frontend (lint + build)
 
 ```bash
 cd frontend
-npm run build
+npm run lint     # oxlint — expect 0 errors; existing warnings may be printed
+npm run build    # Vite production build — expect 0 errors
 ```
 
 ---
 
-## Design system & tokens
+## Data provenance
 
-The frontend UI follows the JomiTrace v3 specifications:
-- **Palette:** Surface `#F7F5EF` (bone/off-white), deep charcoal/slate `#0F172A`, slate-gray secondary text `#64748B`, restrained dark teal `#245E58`.
-- **Status markers:** Muted amber `#D97706` for markers/borders with `#92400E` text (ensuring WCAG AA 4.5:1 contrast on bone); muted burgundy `#991B1B` for conflicts.
-- **Typography:** Geist & Geist Mono for Latin, with Noto Sans Bengali fallback for Bangla script. Headings use sentence-case with `text-wrap: balance`.
-- **Layout:** Dense split-pane ledger and timeline, avoiding generic four-card metric dashboards and decorative icons.
+All land records, party names, deed numbers, khatian references, and mouza names used in this application are **entirely synthetic and fictional**.
 
----
-
-## Data sources & provenance
-
-All demonstration cases (S1 through S8) are entirely **synthetic and fictional**. No real citizen names, National ID (NID) numbers, phone numbers, or genuine land deeds are stored or queried.
+- They do not represent any real person, parcel, district, or legal document.
+- No government data was scraped, mirrored, or stored.
+- All data was designed for demonstration purposes only within the LandTech 2026 hackathon.
 
 ---
 
-## AI tools disclosure
+## AI tool disclosure
 
-In compliance with LandTech 2026 Rule Book §9:
-- **AI Coding Assistant:** Google Antigravity / Gemini was used for code scaffolding, boilerplate setup, and test structuring.
-- **Human Review & Responsibility:** All architectural constraints, rule catalog definitions (`RULES.md`), and domain boundaries were designed and verified by the team.
+The following AI tools were used during development:
+
+| Tool | Use |
+|---|---|
+| **Google Antigravity / Gemini** | Earlier code scaffolding, boilerplate generation, test structuring, and localization review |
+| **OpenAI Codex** | Repository review, targeted frontend styling/localization fixes, and verification for this completion pass |
+
+AI tools assisted development; this prototype has not been deployed publicly. The deterministic rules and their limits are documented in the repository. Review the current build and test results below rather than relying on historical counts.
 
 ---
 
-## Documentation reference
+## Known limitations
 
-Full specification documents are located in `docs/`:
-- `INDEX.md` — Project documentation index
-- `PRD.md` — Product requirements document (v3)
-- `TRD.md` — Technical requirements document
-- `RULES.md` — Deterministic rule catalog (JT-R01 to JT-R09) and scenario test matrix
-- `BACKEND_SCHEMA.md` — Data model and API specifications
-- `APP_FLOW.md` — Application flow and screen specifications
-- `IMPLEMENTATION_PLAN.md` — Hackathon timeline and execution milestones
-- `SUBMISSION_PACK.md` — Compliance matrix, concept note outline, and video script
+1. **No live government portal integration** — all records must be manually entered. JomiTrace cannot fetch real deed or khatian data.
+2. **No OCR or document parsing** — the tool evaluates entered metadata, not scanned document images.
+3. **Limited party matching** — name aliases (spelling variants in Bangla/English) are flagged but not automatically resolved.
+4. **No multi-user or auth support** — single-instance local deployment only.
+5. **Bangla localization is not exhaustive** — common scenario and rule-engine messages have explicit translations; some dynamic values and less common screens may still contain English text.
+6. **Prototype status** — not production-ready; no persistent backups, rate limiting, or role-based access control.
+
+---
+
+## Team
+
+**Team AN** · Daffodil International University
+LandTech 2026 Hackathon — Track P3 & P5
+
+| Role | Name |
+|---|---|
+| Team Member | Adiba Tasnim Chowdhury |
+| Team Member | Nusrat Jiban Mim |
+| Industry Support Mentor | Mahabub Rahaman |
+| Faculty Mentor | Md. Ashraful Islam Talukdar |
