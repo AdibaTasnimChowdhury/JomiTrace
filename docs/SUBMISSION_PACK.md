@@ -21,7 +21,7 @@
 ## 2. Concept note outline (4 pages)
 1. **Header and problem choice (0.3 p):** project, team, 2 students + 2 mentors, P3 primary / P5 secondary.
 2. **Problem in Bangladesh (0.7 p):** land disputes; registration (sub-registry) and mutation (AC Land) records are separate; khatians across CS/SA/RS/BS; partial sales and unit variety make naive matching unreliable. Use only facts you have verified; cite sources.
-3. **Solution (0.8 p):** evidence-linked screening workflow; deterministic rules R01-R09; what it does **not** do (no verdicts, no authenticity claims).
+3. **Solution (0.8 p):** evidence-linked screening workflow; deterministic rules R01-R10; what it does **not** do (no legal verdicts, no authenticity claims).
 4. **Architecture and stack (0.6 p):** diagram from `TRD.md`; rule engine isolated; SQLite/Postgres; React/FastAPI.
 5. **Key features (0.5 p):** timeline, comparison grid, false-positive guards (survey series, partial sales, units), bilingual, report.
 6. **Countrywide implementation plan (0.8 p):** below.
