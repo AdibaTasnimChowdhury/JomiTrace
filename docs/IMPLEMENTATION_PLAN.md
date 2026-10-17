@@ -1,4 +1,6 @@
-# Implementation plan (v3)
+# Historical implementation plan (v3)
+
+This plan records the original hackathon schedule and is retained as project history. Current implementation and release status are tracked in `RELEASE_NOTES.md` and `RELEASE_CHECKLIST.md`.
 
 ## Reality check
 Round 1 submission closes **18 Oct 2026** (extended from 16 Oct; the rule book PDF still shows the old date, so keep the organizers' announcement or a screenshot). Missing the deadline disqualifies the team (§14). Confirm the cutoff **time** on landtech.diu.edu.bd/landtech. You have roughly two working days: Fri 16 (rest of day), Sat 17, Sun 18. Treat **evening of 17 Oct as your real deadline** and use the 18th only as buffer for upload problems.
