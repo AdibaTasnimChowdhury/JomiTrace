@@ -1,0 +1,109 @@
+{
+  "case_id": "case-s5",
+  "case_code": "JT-S5-GAP",
+  "title": "Third transfer seller never appears as prior buyer (chain gap)",
+  "district": "Cumilla",
+  "upazila": "Kotwali",
+  "mouza": "Shashangachha",
+  "config": {
+    "area_tolerance_pct": 1.0
+  },
+  "parties": [
+    {
+      "id": "p1",
+      "label": "Party P1"
+    },
+    {
+      "id": "p2",
+      "label": "Party P2"
+    },
+    {
+      "id": "p3",
+      "label": "Party P3"
+    },
+    {
+      "id": "p4",
+      "label": "Party P4 (Unconnected Seller)"
+    },
+    {
+      "id": "p5",
+      "label": "Party P5"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-deed-s5-1",
+      "record_type": "deed",
+      "source_reference": "Deed 101",
+      "survey_series": "RS",
+      "dag_no": "300",
+      "record_date": "2018-01-10",
+      "registration_date": "2018-01-12",
+      "area_value": 20.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p2"
+    },
+    {
+      "id": "rec-deed-s5-2",
+      "record_type": "deed",
+      "source_reference": "Deed 102",
+      "survey_series": "RS",
+      "dag_no": "300",
+      "record_date": "2020-03-15",
+      "registration_date": "2020-03-18",
+      "area_value": 20.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p2",
+      "buyer_party_id": "p3"
+    },
+    {
+      "id": "rec-deed-s5-3",
+      "record_type": "deed",
+      "source_reference": "Deed 103",
+      "survey_series": "RS",
+      "dag_no": "300",
+      "record_date": "2022-07-20",
+      "registration_date": "2022-07-25",
+      "area_value": 20.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p4",
+      "buyer_party_id": "p5"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-s5-1",
+      "source_record_id": "rec-deed-s5-1",
+      "event_date": "2018-01-12",
+      "transfer_type": "sale",
+      "from_party_id": "p1",
+      "to_party_id": "p2",
+      "area_conveyed_value": 20.0,
+      "area_unit": "decimal",
+      "sequence_index": 0
+    },
+    {
+      "id": "ev-s5-2",
+      "source_record_id": "rec-deed-s5-2",
+      "event_date": "2020-03-18",
+      "transfer_type": "sale",
+      "from_party_id": "p2",
+      "to_party_id": "p3",
+      "area_conveyed_value": 20.0,
+      "area_unit": "decimal",
+      "sequence_index": 1
+    },
+    {
+      "id": "ev-s5-3",
+      "source_record_id": "rec-deed-s5-3",
+      "event_date": "2022-07-25",
+      "transfer_type": "sale",
+      "from_party_id": "p4",
+      "to_party_id": "p5",
+      "area_conveyed_value": 20.0,
+      "area_unit": "decimal",
+      "sequence_index": 2
+    }
+  ]
+}
