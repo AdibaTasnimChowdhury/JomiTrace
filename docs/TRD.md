@@ -3,7 +3,7 @@
 ## Stack
 - Frontend: React + TypeScript + Tailwind CSS
 - Backend: Python + FastAPI
-- Database: **SQLite by default** (zero-setup for judges and free-tier deploy); PostgreSQL supported through the same SQLAlchemy models and a `docker-compose.yml`
+- Database: **SQLite by default** for local development. Other SQLAlchemy database deployments require a driver, configuration, and separate deployment validation; no Compose file is included.
 - API validation: Pydantic
 - Reports: printable HTML or PDF
 - Tests: unit tests for deterministic rules and focused UI/API tests
