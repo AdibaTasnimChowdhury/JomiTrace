@@ -23,6 +23,14 @@ class PlotCrosswalkBase(BaseModel):
 class PlotCrosswalkCreate(PlotCrosswalkBase):
     pass
 
+class PlotCrosswalkUpdate(BaseModel):
+    series_a: Optional[SurveySeries] = None
+    dag_a: Optional[str] = Field(None, min_length=1, max_length=64)
+    series_b: Optional[SurveySeries] = None
+    dag_b: Optional[str] = Field(None, min_length=1, max_length=64)
+    basis_note: Optional[str] = None
+    confirmed_by_reviewer: Optional[bool] = None
+
 class PlotCrosswalkResponse(PlotCrosswalkBase):
     id: str
     case_id: str
