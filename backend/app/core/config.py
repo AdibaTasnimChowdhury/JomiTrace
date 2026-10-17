@@ -3,7 +3,7 @@ from typing import Any, Dict, List
 
 class Settings:
     PROJECT_NAME: str = "JomiTrace"
-    PROJECT_DESCRIPTION: str = "Explainable land-record verification and risk screening"
+    PROJECT_DESCRIPTION: str = "Explainable land-record discrepancy screening"
     VERSION: str = "0.1.0"
     RULE_VERSION: str = "0.2"
     API_PREFIX: str = "/api"
