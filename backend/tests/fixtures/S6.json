@@ -1,0 +1,96 @@
+{
+  "case_id": "case-s6",
+  "case_code": "JT-S6-MUTRAPID",
+  "title": "Mutation names different buyer, followed by rapid re-transfer within 20 days",
+  "district": "Chattogram",
+  "upazila": "Patiya",
+  "mouza": "Bhatikhain",
+  "config": {
+    "area_tolerance_pct": 1.0,
+    "rapid_transfer_days": 30
+  },
+  "parties": [
+    {
+      "id": "p1",
+      "label": "Party P1 (Deed Seller)"
+    },
+    {
+      "id": "p2",
+      "label": "Party P2 (Deed Buyer)"
+    },
+    {
+      "id": "p3",
+      "label": "Party P3 (Mutation Beneficiary)"
+    },
+    {
+      "id": "p4",
+      "label": "Party P4 (Rapid Buyer)"
+    }
+  ],
+  "records": [
+    {
+      "id": "rec-deed-s6-1",
+      "record_type": "deed",
+      "source_reference": "Deed 501",
+      "survey_series": "BS",
+      "dag_no": "620",
+      "deed_no": "501/2021",
+      "record_date": "2021-03-01",
+      "registration_date": "2021-03-05",
+      "area_value": 25.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p1",
+      "buyer_party_id": "p2"
+    },
+    {
+      "id": "rec-mut-s6-1",
+      "record_type": "mutation",
+      "source_reference": "Mutation Case 88/2021",
+      "survey_series": "BS",
+      "dag_no": "620",
+      "deed_no": "501/2021",
+      "record_date": "2021-03-10",
+      "area_value": 25.0,
+      "area_unit": "decimal",
+      "owner_party_id": "p3"
+    },
+    {
+      "id": "rec-deed-s6-2",
+      "record_type": "deed",
+      "source_reference": "Deed 502",
+      "survey_series": "BS",
+      "dag_no": "620",
+      "deed_no": "502/2021",
+      "record_date": "2021-03-24",
+      "registration_date": "2021-03-25",
+      "area_value": 25.0,
+      "area_unit": "decimal",
+      "seller_party_id": "p3",
+      "buyer_party_id": "p4"
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-s6-1",
+      "source_record_id": "rec-deed-s6-1",
+      "event_date": "2021-03-05",
+      "transfer_type": "sale",
+      "from_party_id": "p1",
+      "to_party_id": "p2",
+      "area_conveyed_value": 25.0,
+      "area_unit": "decimal",
+      "sequence_index": 0
+    },
+    {
+      "id": "ev-s6-2",
+      "source_record_id": "rec-deed-s6-2",
+      "event_date": "2021-03-25",
+      "transfer_type": "sale",
+      "from_party_id": "p3",
+      "to_party_id": "p4",
+      "area_conveyed_value": 25.0,
+      "area_unit": "decimal",
+      "sequence_index": 1
+    }
+  ]
+}
