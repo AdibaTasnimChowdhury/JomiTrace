@@ -12,7 +12,7 @@ class CaseBase(BaseModel):
     mouza: Optional[str] = Field(None, max_length=128)
     jl_number: Optional[str] = Field(None, max_length=64)
     notes: Optional[str] = None
-    provenance: Provenance = Field(Provenance.SYNTHETIC, description="Data provenance (synthetic, organizer, public)")
+    provenance: Provenance = Field(Provenance.USER_ENTERED, description="Data provenance (user_entered, synthetic, organizer, public)")
     config_json: Optional[Dict[str, Any]] = Field(None, description="Tolerance and rule configuration")
 
     @field_validator("case_code", "title")
