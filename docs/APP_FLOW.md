@@ -1,14 +1,13 @@
 # Application flow and screen specification
 
 ## Navigation
-Persistent restrained desktop navigation: Dashboard, Verification cases, and Reports. When a case is open, expose Records, Timeline, Findings, Checklist, and Report through compact tabs or secondary navigation. Avoid a separate marketing landing page.
+The current app has top-level Investigation Ledger, Case Workspace, and Rules & Limitations sections. A selected case opens a workspace with Findings, Source Records, Parties & Crosswalk, Ownership Timeline, Comparison Grid, Checklist, Audit & Integrity, and Printable Report. Some secondary tools are grouped under “More tools.”
 
 ## Dashboard: dense case ledger
-- Narrow left operational-status column: Review required, Conflict detected, Incomplete source data.
-- Wide right pane: searchable recent-case ledger.
+- Searchable case ledger with status and provenance filters.
 - Compact status filters and a restrained “Create case” action.
 - No hero banner and no four-card metric row.
-- Ledger columns: case ID, plot reference/location, record count, latest finding, status, last updated.
+- Ledger rows show case identity, location, record/finding summary, status, and last updated time.
 - Counts must come from actual case data. Empty states should say what action is available, e.g. “No cases match these filters.”
 
 ## Language and scenario controls
@@ -44,7 +43,7 @@ Use columns for field, Record A/source tag, Record B/source tag, comparison resu
 ## Finding detail
 Show status, category, rule code, explanation, compared fields, observed values, source tags, limitations, and recommended follow-up. No opaque numerical risk score or generic AI-written narrative.
 
-## Verification checklist
+## External review checklist
 Each row shows check, reason, status, reviewer note, and a “Mark completed” or “Reopen” action. Use explicit labels such as “Verify the original record through an authorized source.”
 
 ## Report preview
@@ -60,4 +59,4 @@ Search, filters, row selection, forms, evidence links, timeline tags, checklist 
 Static page rendered from `GET /api/rules`: each rule code, what it compares, thresholds, and what it cannot tell. Linked from every finding and from the report footer.
 
 ## Bangla/English acceptance
-Every screen renders in both languages without truncation; Bangla conjuncts display correctly in print preview; status labels remain text in both languages.
+English and Bangla are available throughout the main interface. A complete human review of every screen, generated finding string, mixed-script value, and print layout remains a release task; see `RELEASE_NOTES.md` and `RELEASE_CHECKLIST.md`.
