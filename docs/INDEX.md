@@ -1,6 +1,6 @@
 # JomiTrace project documentation (v3)
 
-**Product:** JomiTrace: explainable land-record verification and risk screening
+**Product:** JomiTrace: explainable land-record discrepancy screening
 **Primary problem:** P3 Fraud & Double-Selling Detection
 **Secondary workflow:** P5 Citizen Pre-Purchase Verification
 **Event:** LandTech 2026. Round 1 submission due **18 Oct 2026** (extended from 16 Oct in the rule book; keep the organizers' announcement or screenshot). Internal target: submit by evening of 17 Oct. Final round date TBA (Knowledge Tower, DIU).
@@ -21,7 +21,7 @@
 | `FUTURE_IMPROVEMENTS.md` | Deferred work |
 
 ## MVP tiers
-- **Tier A (must exist for Round 1):** case + records, rule engine R01-R09 with evidence links, timeline, comparison grid, printable report, 6+ fictional scenarios, party alias + crosswalk screens, checklist, README/concept note/video.
+- **Implemented scope:** case + records, rule engine R01-R10 with evidence links, timeline, comparison grid, printable report, eight fictional scenarios, party alias + crosswalk screens, checklist, README/concept note/video. See release notes for checks still outstanding.
 - **Tier B (Round 1 if time allows, otherwise before final):** live deployment, Bangla/English toggle, run history and stale banner.
 - **Tier C (stretch, only if A+B done):** document-reuse check (R10, SHA-256 of a synthetic file), cross-case plot index on synthetic registry.
 
