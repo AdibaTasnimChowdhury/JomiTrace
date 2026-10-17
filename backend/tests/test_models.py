@@ -40,7 +40,7 @@ def test_create_verification_case_with_defaults(db_session):
     assert len(case.id) == 36
     assert case.case_code == "JT-1001"
     assert case.status == CaseStatus.DRAFT
-    assert case.provenance == Provenance.SYNTHETIC
+    assert case.provenance == Provenance.USER_ENTERED
     assert case.config_json["area_tolerance_pct"] == 1.0
     assert case.config_json["rapid_transfer_days"] == 30
     assert case.created_at is not None
