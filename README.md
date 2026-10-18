@@ -1,5 +1,10 @@
 # JomiTrace
 
+## Submission links
+
+- [Project demo video](https://youtu.be/3aERPFNS3N4)
+- [Concept note](https://drive.google.com/file/d/1PNQUT-Py1zP01GnI8EOZFe207WSE5cv_/view?usp=sharing)
+
 > **Explainable land-record discrepancy screening for Bangladesh**
 >
 > Built for the [LandTech 2026 Hackathon](https://landtech.daffodilvarsity.edu.bd/) at Daffodil International University.
