@@ -15,7 +15,10 @@ class Settings:
     DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./jomitrace.db")
     
     # CORS configuration
-    CORS_ORIGINS_RAW: str = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000")
+    CORS_ORIGINS_RAW: str = os.getenv(
+    "CORS_ORIGINS",
+    "http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,https://jomitrace.netlify.app"
+)
     
     # Default rule engine and tolerance configuration
     DEFAULT_CASE_CONFIG: Dict[str, Any] = {
