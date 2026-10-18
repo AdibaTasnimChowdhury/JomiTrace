@@ -5,11 +5,11 @@
 ## 1. Rule-book compliance matrix
 | Rule book | Requirement | JomiTrace status |
 |---|---|---|
-| §3 | State one problem statement in concept note | P3 primary, P5 secondary: say so on page 1 |
+| §3 | State one problem statement in concept note | Select P3 Fraud & Double-Selling Detection on page 1; describe pre-purchase review only as a supporting use context |
 | §4 | 2 students + faculty mentor + industry mentor | List all four in concept note |
-| §7 | Original work, licences respected, sources credited | README "Credits and licences" |
+| §7 | Original work, licences respected, sources credited | README "Data sources, dependencies, and credits" |
 | §7.4 | Commit history | Keep intact |
-| §7.5 | Changes since Round 1 in README | Add section before final |
+| §7.5 | Changes since Round 1 in README | Summary added; confirm it reflects the submitted Round 1 baseline before final submission |
 | §8.1-8.2 | Synthetic/organizer/public data; no real personal data | All scenarios fictional; `DATA_PROVENANCE.md` |
 | §8.3-8.4 | No scraping, no live-system testing | No outbound calls to government hosts in code; state it in README |
 | §8.5 | Real documents must be anonymized and pre-approved | Not used |
@@ -19,7 +19,7 @@
 | §11 | 5 min pitch/demo + 3 min Q&A; students only; lottery order | Section 5 |
 
 ## 2. Concept note outline (4 pages)
-1. **Header and problem choice (0.3 p):** project, team, 2 students + 2 mentors, P3 primary / P5 secondary.
+1. **Header and problem choice (0.3 p):** project, team, 2 students + 2 mentors, and the single selected problem statement P3.
 2. **Problem in Bangladesh (0.7 p):** land disputes; registration (sub-registry) and mutation (AC Land) records are separate; khatians across CS/SA/RS/BS; partial sales and unit variety make naive matching unreliable. Use only facts you have verified; cite sources.
 3. **Solution (0.8 p):** evidence-linked screening workflow; deterministic rules R01-R10; what it does **not** do (no legal verdicts, no authenticity claims).
 4. **Architecture and stack (0.6 p):** diagram from `TRD.md`; rule engine isolated; SQLite/Postgres; React/FastAPI.
@@ -37,7 +37,7 @@
 ## 3. README skeleton
 ```
 # JomiTrace
-One-paragraph description and the P3/P5 statement.
+One-paragraph description naming P3 as the single selected problem statement. Pre-purchase review may be described as a supporting workflow, not as selection of P5.
 ## What it does / what it does not do
 ## Quick start (one command; SQLite default)
 ## Scenarios S1-S8 and what each demonstrates

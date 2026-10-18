@@ -1,7 +1,8 @@
 # JomiTrace — Concept Note
 
 **LandTech 2026 Hackathon | Daffodil International University**\
-**Tracks: P3 – Fraud & Double-Selling Detection · P5 – Citizen Pre-Purchase Verification**\
+**Selected problem statement: P3 – Fraud & Double-Selling Detection**\
+**Use context:** citizens and reviewers screening supplied records before a transaction; this does not claim official ownership verification.\
 **Team: Team AN · Daffodil International University**
 
 ---
@@ -74,29 +75,16 @@ The interface provides English and Bangla, includes 8 fictional demonstration sc
 
 ---
 
-## 4. Track Alignment
+## 4. P3 Alignment
 
-### P3 – Fraud & Double-Selling Detection
-
-| JomiTrace Feature | P3 Requirement |
+| JomiTrace feature | P3 requirement |
 |---|---|
 | JT-R04: Competing conveyances | Detects same-holding duplicate sale |
-| JT-R03: Chain gap | Flags seller with no documented prior title |
+| JT-R03: Chain gap | Flags a seller with no preceding buyer record in the entered transfer chain |
 | JT-R05: Over-conveyance | Detects area inflation across multiple deeds |
-| JT-R06: Date sequence | Catches backdated or post-dated registrations |
+| JT-R06: Registration-date sequence | Flags future registration dates and linked mutation registrations earlier than the cited deed registration; execution dates are not collected |
 | SHA-256 input fingerprint | Lets a reviewer compare current entered input with the analyzed snapshot |
 | Local activity history | Records analysis runs and explicit report exports; it does not identify an authenticated reviewer |
-
-### P5 – Citizen Pre-Purchase Verification
-
-| JomiTrace Feature | P5 Requirement |
-|---|---|
-| Guided tour + bilingual UI | Accessible to non-specialist citizens |
-| 8 fictional scenarios | Demonstrations of discrepancy patterns; not accuracy benchmarks |
-| Verification Checklist | Guides next steps at Sub-Registry, AC Land, etc. |
-| Printable report | Document to bring to legal advisor or bank |
-| Scope disclaimers | Prevents over-reliance on prototype |
-| JT-R09: Missing fields | Flags incomplete documents before purchase |
 
 ---
 
@@ -112,22 +100,32 @@ JomiTrace is explicitly designed to avoid overclaiming. All outputs include:
 
 ---
 
-## 6. Data Provenance
+## 6. Countrywide Implementation Path
+
+JomiTrace is currently a local prototype, with no live portal connection and no authorization to process real personal land records. A broader rollout would require formal approval, privacy and security review, and agreements with the responsible public agencies before any integration.
+
+1. **Controlled pilot:** validate the workflow with synthetic or organizer-approved sample data and trained reviewers in a small, non-production setting. Measure review time, findings that reviewers confirm, and false positives; do not use real personal data in the hackathon prototype.
+2. **Authorized integration planning:** work with the relevant agencies to define data standards, access controls, audit requirements, and an approved API or data-sharing arrangement. Do not scrape or query live portals; connect only after written authorization and security review.
+3. **Staged expansion:** if the pilot and approvals support it, expand to additional districts with Bangla-first training, documented rule changes, accessibility checks, privacy controls, and ongoing false-positive monitoring.
+
+This is a proposed path, not a claim that agency integration, a pilot, or nationwide deployment has been approved or completed.
+
+## 7. Data Provenance
 
 All land records, party names, deed numbers, khatian references, and mouza names in JomiTrace are **entirely synthetic and fictional**, created specifically for demonstration purposes. No government data was scraped or stored.
 
 ---
 
-## 7. AI Tool Disclosure
+## 8. AI Tool Disclosure
 
-**Google Antigravity / Gemini** was used during earlier implementation for code scaffolding, boilerplate generation, test structuring, and localization review. **OpenAI Codex** was used for this completion pass to inspect the repository, make targeted styling and localization corrections, and run available verification. AI tools assisted the work; this disclosure does not claim that every generated change received independent review.
+**Google Antigravity / Gemini** was used during earlier implementation for code scaffolding, boilerplate generation, test structuring, and localization review. **OpenAI Codex** was used for this completion pass to inspect the repository, make targeted styling and localization corrections, update project documentation, and run available verification. AI tools assisted the work; this disclosure does not claim that every generated change received independent review.
 
 ---
 
-## 8. Team
+## 9. Team
 
 **Team AN** · Daffodil International University\
-LandTech 2026 Hackathon — Tracks P3 and P5
+LandTech 2026 Hackathon — Selected problem statement P3
 
 | Role | Name |
 |---|---|

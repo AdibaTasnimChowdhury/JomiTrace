@@ -61,5 +61,5 @@ Sales of part of a holding are common. A second deed on the same holding is **no
 4. Review the transfer sequence for missing links.
 5. Check the mutation entry and its disposal status through the land office or authorized portal.
 6. Review land development tax receipts for the relevant years.
-7. Check for pending cases, khas or acquisition status through authorized sources (P5).
+7. Optional pre-purchase follow-up outside JomiTrace's selected P3 scope: check pending cases, khas or acquisition status through authorized sources.
 8. Seek qualified legal or survey review where inheritance, boundaries or title interpretation matter.

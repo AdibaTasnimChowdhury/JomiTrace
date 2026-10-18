@@ -1,8 +1,8 @@
 # JomiTrace project documentation (v3)
 
 **Product:** JomiTrace: explainable land-record discrepancy screening
-**Primary problem:** P3 Fraud & Double-Selling Detection
-**Secondary workflow:** P5 Citizen Pre-Purchase Verification
+**Selected problem statement:** P3 Fraud & Double-Selling Detection
+**Supporting use context:** pre-purchase review of user-supplied records; not official ownership verification
 **Event:** LandTech 2026. Round 1 submission due **18 Oct 2026** (extended from 16 Oct in the rule book; keep the organizers' announcement or screenshot). Internal target: submit by evening of 17 Oct. Final round date TBA (Knowledge Tower, DIU).
 
 ## Documents

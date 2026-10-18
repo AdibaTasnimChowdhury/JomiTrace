@@ -1,7 +1,7 @@
 # JomiTrace — Demo Script & Shot List
 
 **Maximum duration: 3 minutes**\
-**Target audience: LandTech 2026 judges, P3/P5 track**
+**Target audience: LandTech 2026 judges, P3 – Fraud & Double-Selling Detection**
 
 ---
 

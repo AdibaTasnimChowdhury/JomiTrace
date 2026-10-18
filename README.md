@@ -3,7 +3,7 @@
 > **Explainable land-record discrepancy screening for Bangladesh**
 >
 > Built for the [LandTech 2026 Hackathon](https://landtech.daffodilvarsity.edu.bd/) at Daffodil International University.
-> Directly addresses **P3 – Fraud & Double-Selling Detection** and **P5 – Citizen Pre-Purchase Verification**.
+> **Selected problem statement: P3 – Fraud & Double-Selling Detection.** The pre-purchase checklist is a supporting user workflow; JomiTrace is not an official ownership-verification service.
 
 ---
 
@@ -203,6 +203,14 @@ All land records, party names, deed numbers, khatian references, and mouza names
 - No government data was scraped, mirrored, or stored.
 - All data was designed for demonstration purposes only within the LandTech 2026 hackathon.
 
+## Data sources, dependencies, and credits
+
+- **Land-record data:** no external land-record dataset or government system is used. S1–S8 are synthetic scenarios created for demonstration; users may enter their own metadata locally.
+- **Frontend sources:** [React and React DOM](https://github.com/facebook/react), [Vite](https://github.com/vitejs/vite), [Vite React plugin](https://github.com/vitejs/vite-plugin-react), [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss), [TypeScript](https://github.com/microsoft/TypeScript), [PostCSS](https://github.com/postcss/postcss), [Autoprefixer](https://github.com/postcss/autoprefixer), [Oxlint](https://github.com/oxc-project/oxc), and [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) type definitions.
+- **Backend and test sources:** [FastAPI](https://github.com/fastapi/fastapi), [SQLAlchemy](https://github.com/sqlalchemy/sqlalchemy), [Pydantic](https://github.com/pydantic/pydantic), [Uvicorn](https://github.com/encode/uvicorn), [HTTPX](https://github.com/encode/httpx), and [pytest](https://github.com/pytest-dev/pytest).
+
+Dependency versions are declared in `frontend/package.json` and `backend/requirements.txt`. The listed projects retain their respective upstream licenses; consult the linked repositories and installed package license notices before redistribution. No public land dataset or third-party land-record API is incorporated.
+
 ---
 
 ## AI tool disclosure
@@ -212,9 +220,13 @@ The following AI tools were used during development:
 | Tool | Use |
 |---|---|
 | **Google Antigravity / Gemini** | Earlier code scaffolding, boilerplate generation, test structuring, and localization review |
-| **OpenAI Codex** | Repository review, targeted frontend styling/localization fixes, and verification for this completion pass |
+| **OpenAI Codex** | Repository review, targeted frontend styling/localization fixes, documentation updates, and verification for this completion pass |
 
 AI tools assisted development; this prototype has not been deployed publicly. The deterministic rules and their limits are documented in the repository. Review the current build and test results below rather than relying on historical counts.
+
+## Changes since Round 1
+
+The current release adds and refines the bilingual case workspace, evidence-linked findings, screening reports, comparison and timeline views, audit history, and fictional scenarios. It also improves responsive layouts, accessibility, consistent screening statuses, date and area presentation, and the documentation of data handling and limitations. See [the release notes](docs/RELEASE_NOTES.md) for verification results and remaining limitations.
 
 ---
 
@@ -232,7 +244,7 @@ AI tools assisted development; this prototype has not been deployed publicly. Th
 ## Team
 
 **Team AN** · Daffodil International University
-LandTech 2026 Hackathon — Track P3 & P5
+LandTech 2026 Hackathon — Selected problem statement P3
 
 | Role | Name |
 |---|---|

@@ -1,6 +1,6 @@
 # Review notes: what changed from v2 and why
 
-Reviewed against the LandTech 2026 rule book (Track: Digital Land Records, Verification & Digitization; Problem P3 primary, P5 secondary).
+Reviewed against the LandTech 2026 rule book (Track: Digital Land Records, Verification & Digitization; selected problem statement P3 Fraud & Double-Selling Detection). Pre-purchase review is a supporting use context, not a second selected problem statement.
 
 ## Critical
 1. **Round 1 deadline is now 18 Oct 2026** (the rule book PDF says 16 Oct; the extension came later, so keep the announcement). Late submissions are not accepted and a missed deadline is a disqualification ground (§14). The old 7-phase plan still cannot finish in two days, so `IMPLEMENTATION_PLAN.md` is split into a **two-day Round 1 plan** and a **pre-final build**. Confirm the exact cutoff time on the platform and aim to submit on the evening of 17 Oct.

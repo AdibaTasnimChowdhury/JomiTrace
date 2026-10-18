@@ -1,7 +1,7 @@
 # Product requirements document (v3)
 
 ## Overview
-JomiTrace is an explainable land-record screening workspace for the LandTech 2026 track *Digital Land Records, Verification & Digitization*, **P3 Fraud & Double-Selling Detection** with a **P5 Citizen Pre-Purchase** entry flow. It compares user-entered record metadata, reconstructs the documented transfer sequence, and returns evidence-linked findings for human review.
+JomiTrace is an explainable land-record screening workspace for the LandTech 2026 track *Digital Land Records, Verification & Digitization*, with **P3 Fraud & Double-Selling Detection** as its single selected problem statement. It compares user-entered record metadata, reconstructs the documented transfer sequence, and returns evidence-linked findings for human review. A pre-purchase checklist is a supporting workflow, not a separate selected problem statement or official ownership verification.
 
 It is not an official registry, legal authority, or fraud verdict engine.
 
@@ -9,7 +9,7 @@ It is not an official registry, legal authority, or fraud verdict engine.
 Land disputes are among the most common civil cases. They often trace to forged or conflicting deeds, khatians that differ across survey generations (CS, SA, RS, BS), and records split between the sub-registry office (registration) and the AC Land office (mutation). A buyer must manually cross-read these. Mismatches are easy to miss, and a naive tool would also raise false alarms (different dag numbers across surveys, partial sales, area units such as decimal vs katha).
 
 ## Users
-- Citizens preparing for a purchase (P5), with a checklist of what to verify and where.
+- Citizens screening supplied records before a purchase, with a checklist of follow-up checks and where they may be performed.
 - Reviewers and case workers who must document what was compared.
 - Judges and students demonstrating a repeatable workflow.
 
