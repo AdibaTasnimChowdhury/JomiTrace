@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --color-surface: #F7F5EF;
+    --color-surface: #F1F5F2;
     --color-charcoal: #0F172A;
     --color-slate-deep: #1E293B;
     --color-slate-muted: #64748B;
-    --color-teal-brand: #245E58;
+    --color-teal-brand: #173F3A;
     --color-amber-marker: #D97706;
     --color-amber-text: #92400E;
     --color-burgundy-marker: #991B1B;
   }
 
   body {
-    background-color: #F7F5EF;
+    background-color: #F1F5F2;
     color: #0F172A;
     font-family: 'Geist', 'Noto Sans Bengali', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
@@ -33,5 +33,52 @@
   code, pre, .font-mono {
     font-family: 'Geist Mono', 'Noto Sans Bengali', ui-monospace, SFMono-Regular, monospace;
     font-feature-settings: "tnum" 1;
+  }
+
+  :focus-visible {
+    outline: 2px solid #173F3A;
+    outline-offset: 2px;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+}
+
+@layer components {
+  /* Reusable section heading style */
+  .section-heading {
+    @apply text-xs font-bold uppercase tracking-wider text-slate-muted border-b border-slate-subtle pb-1 m-0;
+  }
+
+  /* Standard white card */
+  .card {
+    @apply bg-white border border-slate-border rounded-sm shadow-sm;
+  }
+
+  /* Standard table header row */
+  .table-header-row {
+    @apply border-b border-slate-subtle bg-slate-50 text-slate-muted font-semibold uppercase tracking-wider text-[11px];
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply px-3 py-1.5 bg-teal-brand text-white text-xs font-semibold rounded-sm hover:bg-teal-hover transition-colors cursor-pointer disabled:opacity-50;
+  }
+
+  /* Secondary action button */
+  .btn-secondary {
+    @apply px-3 py-1.5 border border-slate-border text-slate-deep text-xs font-medium rounded-sm hover:bg-bone transition-colors cursor-pointer;
+  }
+
+  /* Danger action button */
+  .btn-danger {
+    @apply px-3 py-1.5 bg-burgundy-marker text-white text-xs font-medium rounded-sm hover:bg-red-800 transition-colors cursor-pointer;
+  }
+
+  /* Form input */
+  .form-input {
+    @apply w-full px-2.5 py-1.5 border border-slate-border text-xs rounded-sm focus:border-teal-brand focus:outline-hidden bg-white;
   }
 }
