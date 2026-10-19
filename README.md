@@ -2,7 +2,7 @@
 
 ## Submission links
 
-- [Live app](https://jomitrace.netlify.app/)
+- [Live url](https://jomitrace.netlify.app/)
 - [Project demo video](https://youtu.be/3aERPFNS3N4)
 - [Concept note](https://drive.google.com/file/d/1PNQUT-Py1zP01GnI8EOZFe207WSE5cv_/view?usp=sharing)
 
