@@ -174,7 +174,7 @@ jomitrace/
 
 **Storage:** SQLite (single file, no external database needed); default path is relative to the backend working directory.
 **Auth:** None — prototype scope.
-**Deployment:** Local development only (no live deployment URL).
+**Deployment:** https://jomitrace.netlify.app/
 
 ---
 
@@ -228,11 +228,7 @@ The following AI tools were used during development:
 | **Google Antigravity / Gemini** | Earlier code scaffolding, boilerplate generation, test structuring, and localization review |
 | **OpenAI Codex** | Repository review, targeted frontend styling/localization fixes, documentation updates, and verification for this completion pass |
 
-AI tools assisted development; this prototype has not been deployed publicly. The deterministic rules and their limits are documented in the repository. Review the current build and test results below rather than relying on historical counts.
-
-## Changes since Round 1
-
-The current release adds and refines the bilingual case workspace, evidence-linked findings, screening reports, comparison and timeline views, audit history, and fictional scenarios. It also improves responsive layouts, accessibility, consistent screening statuses, date and area presentation, and the documentation of data handling and limitations. See [the release notes](docs/RELEASE_NOTES.md) for verification results and remaining limitations.
+AI tools assisted development; this prototype has been deployed publicly. The deterministic rules and their limits are documented in the repository. Review the current build and test results below rather than relying on historical counts.
 
 ---
 
