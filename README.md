@@ -32,7 +32,7 @@
 - Does NOT claim to prove legal title, authentic ownership, or verify document authenticity.
 - Does NOT produce probabilistic fraud risk scores or ungrounded generative summaries.
 - Does NOT replace physical on-site verification, certified record copies, or legal counsel.
-
+> Planned extensions are listed under [Scope decisions & future work](#scope-decisions--future-work).
 ---
 
 ## Prerequisites
@@ -240,6 +240,25 @@ AI tools assisted development; this prototype has been deployed publicly. The de
 4. **No multi-user or auth support** — single-instance local deployment only.
 5. **Bangla localization is not exhaustive** — common scenario and rule-engine messages have explicit translations; some dynamic values and less common screens may still contain English text.
 6. **Prototype status** — not production-ready; no persistent backups, rate limiting, or role-based access control.
+
+---
+
+## Scope decisions & future work
+
+JomiTrace's MVP is deliberately limited to deterministic, explainable checks on
+user-entered metadata. For a screening tool where a wrong flag can harm a real
+person, we chose auditability over breadth. The following are planned, not built.
+
+| Planned improvement | Why it is deferred |
+|---|---|
+| **Ownership & inheritance layer** (deed → mutation → heir share checks, inspired by the Dolil Dhaka concept) | Succession rules differ by religion and law; a wrong "expected share" has legal consequences. It needs a lawyer-validated rule pack that abstains when unsure. |
+| **OCR / document parsing** | Scanned Bangla records are error-prone; extracted fields would need human confirmation before analysis. Manual entry keeps inputs trustworthy for now. |
+| **AI-assisted name matching** (Bangla/English variants, father/spouse as tie-breaker) | Aliases are currently flagged, not resolved. Automatic matching needs labelled data and a confidence score that a human confirms. |
+| **Official portal adapters** (e-Porcha, DLRS, e-Namjari) | No public API; scraping is out of scope. Needs a formal data-sharing partnership. |
+| **Auth, roles, reviewer workflow** | Prototype is single-user and local. |
+
+**Design principle:** AI may later assist with extraction and matching, but
+findings will remain rule-based, evidence-linked, and human-confirmed.
 
 ---
 
