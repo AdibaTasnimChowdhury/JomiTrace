@@ -251,7 +251,7 @@ person, we chose auditability over breadth. The following are planned, not built
 
 | Planned improvement | Why it is deferred |
 |---|---|
-| **Ownership & inheritance layer** (deed → mutation → heir share checks, inspired by the Dolil Dhaka concept) | Succession rules differ by religion and law; a wrong "expected share" has legal consequences. It needs a lawyer-validated rule pack that abstains when unsure. |
+| **Ownership & inheritance layer** (deed → mutation → heir share checks) | Succession rules differ by religion and law; a wrong "expected share" has legal consequences. It needs a lawyer-validated rule pack that abstains when unsure. |
 | **OCR / document parsing** | Scanned Bangla records are error-prone; extracted fields would need human confirmation before analysis. Manual entry keeps inputs trustworthy for now. |
 | **AI-assisted name matching** (Bangla/English variants, father/spouse as tie-breaker) | Aliases are currently flagged, not resolved. Automatic matching needs labelled data and a confidence score that a human confirms. |
 | **Official portal adapters** (e-Porcha, DLRS, e-Namjari) | No public API; scraping is out of scope. Needs a formal data-sharing partnership. |
