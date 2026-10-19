@@ -1,10 +1,10 @@
-# Release notes — 2026-10-18
+# Release notes — 2026-10-19
 
 ## Readiness status
 
-Pre-release implementation pass.
+Pre-release verification incomplete.
 
-## Changes in this pass
+## Implemented changes (previous pass)
 
 - Promoted case title, location, screening status, finding counts and next action in the workspace header; moved secondary details down.
 - Grouped secondary workspace tools and improved ledger controls, comparison and long tables for narrow screens.
@@ -27,14 +27,13 @@ Pre-release implementation pass.
 - No authentication, role-based authorization, authenticated audit actors, encrypted backup workflow or production retention controls are implemented.
 - Bangla coverage and visual wrapping still require a human review of every screen and state, especially mixed Bangla/Latin text at phone widths.
 - Findings are deterministic screening outputs based on entered metadata and do not validate source-document authenticity or legal title.
-- Lighthouse could not be run in this environment: it is not installed locally and the package download did not complete. The mobile ledger, scenario picker, and tour still need browser-based Lighthouse review.
+- A full Lighthouse audit and complete Bangla review of every screen remain outstanding.
 
-## Verification
+## Verification — 2026-10-19
 
-- Frontend production build: passed (`npm run build`) after this pass.
-- Backend suite: 86 passed, 1 Starlette/httpx deprecation warning. The test runner needed execution outside the sandbox because its first API test stalled in the sandbox.
-- Rule suite: 28 passed.
-- Frontend lint: passed with existing hook dependency, state-in-effect, and caught-error warnings.
-- Lighthouse: not run; install/download did not complete.
-- Browser workflow: not run against this final revision.
-- Bangla review: partial visual pass only; untranslated generated content and remaining screens need a full human language review before release.
+- Frontend production build: passed (`npm run build`).
+- Frontend lint: passed with existing warnings, including unused caught errors and React hook dependency/state-in-effect warnings.
+- Deployed browser smoke review ([live app](https://jomitrace.netlify.app/)): the Bangla ledger, rule catalog, guided tour, and all eight fictional scenario cards were inspected. Case analysis and report export could be exercised.
+- Bangla review: partial. Header, navigation, footer, workspace screens, guided-tour copy, and scenario-picker copy appeared in Bangla. The rule catalog remained in English, and some scenario status labels exposed English text in accessible names.
+- Narrow viewport review (527 × 600): the Netlify hosting badge overlapped the guided tour’s lower navigation controls. This can prevent reliable tour navigation at small widths.
+- Backend suite (86 passed, 1 Starlette/httpx deprecation warning) and rule suite (28 passed): previous results from 2026-10-18; not rerun for this update.
